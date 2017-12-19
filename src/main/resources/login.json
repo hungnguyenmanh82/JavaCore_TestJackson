@@ -1,0 +1,10 @@
+{
+  "user": "user",
+  "pass": "123",
+  "appVersion": 20171111,
+  "xemqueVersion":20171111,
+  "phoneID":"phone id",
+  "ipAdress":"192.168.1.1",
+  "location":"GPS",
+  "wifi":true
+}

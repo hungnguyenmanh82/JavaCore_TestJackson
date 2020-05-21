@@ -1,9 +1,9 @@
-package com.example;
+package com.example.model.jackson;
 
 /**
  * Class này sẽ đc convert thành Json string
  * */
-public class Login {
+public class User {
     public  String user;
     public  String pass;
     public  long appVersion;
@@ -16,11 +16,11 @@ public class Login {
     /*
      * default structure rất quan trọng, nếu ko chương trình sẽ báo lỗi
      * */
-    public Login(){
+    public User(){
     	
     }
     
-	public Login(String user, String pass, long appVersion, long xemqueVersion, String phoneID, String ipAdress,
+	public User(String user, String pass, long appVersion, long xemqueVersion, String phoneID, String ipAdress,
 			String location, boolean wifi) {
 		super();
 		this.user = user;

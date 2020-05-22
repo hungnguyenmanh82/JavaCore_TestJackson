@@ -23,13 +23,15 @@ import io.vertx.core.buffer.Buffer;
  App81_https_Server.class.getResource("/") = root = main/resources/ = main/java/
  App81_https_Server.class.getResource("/abc") = main/resource/abc  = main/java/abc  
  //
- App81_https_Server.class.getResource("..") = root/pakage_name       => package_name của class này
  App81_https_Server.class.getResource(".") = root/pakage_name/ 
  App81_https_Server.class.getResource("abc") = root/pakage_name/abc
  App81_https_Server.class.getResource("abc").getPath()
+ //
+   App81_https_Server.class.getResource("..") = parent folder of root/pakage_name/
+   App81_https_Server.class.getResource("../..") = parent of parent of root/pakage_name/  
   //===========================
   + Run or Debug mode trên Eclipse lấy ./ = project folder 
-
+  
   + run thực tế:  ./ = folder run "java -jar *.jar"
  //========= 
  File("loginTest.json"):   file ở ./ folder    (tùy run thực tế hay trên eclipse)

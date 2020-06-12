@@ -97,6 +97,7 @@ public class App2_Gson {
 		Gson gson = new Gson(); // Or use new GsonBuilder().create();
 
 		Vertx vertx = Vertx.vertx();
+		// blocking = synchronous read file
 		Buffer buffer = vertx.fileSystem().readFileBlocking(App31_vertx.class.getResource("/googleAuth2.json").getPath());
 
 		GoogleOauth3 googleOAuth = gson.fromJson(buffer.toString(), GoogleOauth3.class);

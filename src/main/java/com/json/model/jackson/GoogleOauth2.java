@@ -1,5 +1,5 @@
 
-package com.example.model.jackson;
+package com.json.model.jackson;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -8,7 +8,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
-     http://www.jsonschema2pojo.org/
+ * vào đây để gen từ Json ra Java Class
+ *    http://www.jsonschema2pojo.org/
+ * 
+ * Lưu ý: @annotation của Gson và Jackson là khác nhau   
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({

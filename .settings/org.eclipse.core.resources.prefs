@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
-encoding//src/main/java/com/example/App1_Jackson.java=UTF-8
-encoding//src/main/java/com/example/App2_Gson.java=UTF-8
-encoding//src/main/java/com/example/model/jackson/User.java=UTF-8
+encoding//src/main/java/com/json/App1_Jackson.java=UTF-8
+encoding//src/main/java/com/json/App2_Gson.java=UTF-8
+encoding//src/main/java/com/json/model/jackson/User.java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/test/java=UTF-8
 encoding//src/test/resources=UTF-8

@@ -1,14 +1,14 @@
-package com.example;
+package com.json;
 
 import java.io.File;
 import java.io.IOException;
 
-import com.example.model.jackson.GoogleOauth2;
-import com.example.model.jackson.User;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.json.model.jackson.GoogleOauth2;
+import com.json.model.jackson.User;
 
 /**
  * lúc compile sẽ gộp "main/resources/" và "main/java/" vào 1 folder chung
@@ -98,7 +98,10 @@ public class App1_Jackson {
 	public static void java2Json() throws Exception{
 		ObjectMapper mapper = new ObjectMapper();
 		User obj = new User("hung","123",233,345,"abc","def","GPS",true);
-
+		
+		/**
+		 * Eclipse F11 Debug run at Project folder => tìm file loginTest.json ở project folder
+		 */
 		mapper.writeValue(new File("loginTest.json"), obj);
 
 		String jsonInString = mapper.writeValueAsString(obj);

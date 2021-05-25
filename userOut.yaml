@@ -1,0 +1,9 @@
+---
+user: "hung"
+pass: "123"
+appVersion: 233
+xemqueVersion: 345
+phoneID: "abc"
+ipAdress: "def"
+location: "GPS"
+wifi: true

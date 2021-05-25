@@ -1,8 +1,11 @@
-package com.example.model.jackson;
+package com.json.model.jackson;
 
 /**
- * Class này sẽ đc convert thành Json string
- * */
+ * vào đây để gen từ Json ra Java Class
+ *    http://www.jsonschema2pojo.org/
+ * 
+ * Lưu ý: @annotation của Gson và Jackson là khác nhau   
+ */
 public class User {
     public  String user;
     public  String pass;

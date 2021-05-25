@@ -1,19 +1,19 @@
-package com.example;
+package com.json;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.example.model.gson.GoogleOauth3;
-import com.example.model.jackson.GoogleOauth2;
-import com.example.model.jackson.User;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
+import com.json.model.gson.GoogleOauth3;
+import com.json.model.jackson.GoogleOauth2;
+import com.json.model.jackson.User;
 
 import io.vertx.core.Vertx;
 import io.vertx.core.buffer.Buffer;

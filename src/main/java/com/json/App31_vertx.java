@@ -1,11 +1,10 @@
-package com.example;
+package com.json;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.model.jackson.GoogleOauth2;
-import com.example.model.jackson.User;
-
+import com.json.model.jackson.GoogleOauth2;
+import com.json.model.jackson.User;
 
 import io.vertx.core.Vertx;
 import io.vertx.core.buffer.Buffer;
@@ -24,9 +23,9 @@ public class App31_vertx {
 
 	public static void main(String[] args) throws Exception {
 
-		//		exampleAll();
+		exampleAll();
 
-		JsonToJava();
+		//		JsonToJava();
 
 	}
 
@@ -73,6 +72,7 @@ public class App31_vertx {
 	public static void JsonToJava(){
 
 		Vertx vertx = Vertx.vertx();
+		//synchronous function
 		Buffer buffer = vertx.fileSystem().readFileBlocking(App31_vertx.class.getResource("/googleAuth2.json").getPath());
 
 		//===========================================convert String => JsonObject ===================

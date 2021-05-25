@@ -1,14 +1,17 @@
 
-package com.example.model.gson;
+package com.json.model.gson;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
-http://www.jsonschema2pojo.org/
-*/
+ * vào đây để gen từ Json ra Java Class
+ *    http://www.jsonschema2pojo.org/
+ * 
+ * Lưu ý: @annotation của Gson và Jackson là khác nhau   
+ */
 public class GoogleOauth3 {
-
+	
     @SerializedName("web")
     @Expose
     private Web web;

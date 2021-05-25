@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hung.jackson</groupId>
@@ -8,9 +9,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<jackson.version>2.12.3</jackson.version>
 	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
@@ -20,29 +19,27 @@
 			<version>3.10</version>
 		</dependency>
 		<!-- Jackson -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.7.4</version>
-		</dependency>
+		<!-- chỉ cần dùng thư viện này là đủ: core và annotation là dependencies 
+			sẽ đc add vào -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.7.4</version>
+			<version>${jackson.version}</version>
 		</dependency>
+		<!-- thư viện YAML -->
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>2.7.4</version>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
 
-		<!-- Vertx Json use Jackson-->
+		<!-- Vertx Json use Jackson -->
 		<dependency>
 			<groupId>io.vertx</groupId>
 			<artifactId>vertx-core</artifactId>
-			
+
 			<!-- <version>3.8.5</version> -->
-			<version>4.0.0-milestone5</version>
+			<version>4.0.3</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
@@ -53,4 +50,18 @@
 		</dependency>
 
 	</dependencies>
+	<build>
+		<!-- compiler java -->
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>11</release>
+					<!-- Eclipse use it -->
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

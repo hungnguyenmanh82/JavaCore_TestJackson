@@ -1,99 +1,129 @@
 
-package com.example.model.gson;
+package com.json.model.jackson;
 
 import java.util.List;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+/**
+ * vào đây để gen từ Json ra Java Class
+ *    http://www.jsonschema2pojo.org/
+ * 
+ * Lưu ý: @annotation của Gson và Jackson là khác nhau   
+ */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "client_id",
+    "project_id",
+    "auth_uri",
+    "token_uri",
+    "auth_provider_x509_cert_url",
+    "client_secret",
+    "redirect_uris",
+    "javascript_origins"
+})
 public class Web {
 
-    @SerializedName("client_id")
-    @Expose
+    @JsonProperty("client_id")
     private String clientId;
-    @SerializedName("project_id")
-    @Expose
+    @JsonProperty("project_id")
     private String projectId;
-    @SerializedName("auth_uri")
-    @Expose
+    @JsonProperty("auth_uri")
     private String authUri;
-    @SerializedName("token_uri")
-    @Expose
+    @JsonProperty("token_uri")
     private String tokenUri;
-    @SerializedName("auth_provider_x509_cert_url")
-    @Expose
+    @JsonProperty("auth_provider_x509_cert_url")
     private String authProviderX509CertUrl;
-    @SerializedName("client_secret")
-    @Expose
+    @JsonProperty("client_secret")
     private String clientSecret;
-    @SerializedName("redirect_uris")
-    @Expose
+    @JsonProperty("redirect_uris")
     private List<String> redirectUris = null;
-    @SerializedName("javascript_origins")
-    @Expose
+    @JsonProperty("javascript_origins")
     private List<String> javascriptOrigins = null;
 
+    @JsonProperty("client_id")
     public String getClientId() {
         return clientId;
     }
 
+    @JsonProperty("client_id")
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
 
+    @JsonProperty("project_id")
     public String getProjectId() {
         return projectId;
     }
 
+    @JsonProperty("project_id")
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
 
+    @JsonProperty("auth_uri")
     public String getAuthUri() {
         return authUri;
     }
 
+    @JsonProperty("auth_uri")
     public void setAuthUri(String authUri) {
         this.authUri = authUri;
     }
 
+    @JsonProperty("token_uri")
     public String getTokenUri() {
         return tokenUri;
     }
 
+    @JsonProperty("token_uri")
     public void setTokenUri(String tokenUri) {
         this.tokenUri = tokenUri;
     }
 
+    @JsonProperty("auth_provider_x509_cert_url")
     public String getAuthProviderX509CertUrl() {
         return authProviderX509CertUrl;
     }
 
+    @JsonProperty("auth_provider_x509_cert_url")
     public void setAuthProviderX509CertUrl(String authProviderX509CertUrl) {
         this.authProviderX509CertUrl = authProviderX509CertUrl;
     }
 
+    @JsonProperty("client_secret")
     public String getClientSecret() {
         return clientSecret;
     }
 
+    @JsonProperty("client_secret")
     public void setClientSecret(String clientSecret) {
         this.clientSecret = clientSecret;
     }
 
+    @JsonProperty("redirect_uris")
     public List<String> getRedirectUris() {
         return redirectUris;
     }
 
+    @JsonProperty("redirect_uris")
     public void setRedirectUris(List<String> redirectUris) {
         this.redirectUris = redirectUris;
     }
 
+    @JsonProperty("javascript_origins")
     public List<String> getJavascriptOrigins() {
         return javascriptOrigins;
     }
 
+    @JsonProperty("javascript_origins")
     public void setJavascriptOrigins(List<String> javascriptOrigins) {
         this.javascriptOrigins = javascriptOrigins;
     }
+ 
 
 }

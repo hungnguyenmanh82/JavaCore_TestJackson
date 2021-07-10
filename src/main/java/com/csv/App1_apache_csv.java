@@ -12,6 +12,10 @@ import org.apache.commons.csv.CSVRecord;
 
 import com.yaml.App1_yaml;
 
+/**
+ * để lưu Log thì csv tối ưu hơn nhiều Json về size (vì nó là implicit key)
+ * tốc độ parse cũng nhanh hơn Json
+ */
 public class App1_apache_csv {
 	public static void main(String[] args) throws Exception {
 //		write_csv();

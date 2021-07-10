@@ -1,6 +1,7 @@
 package com.yaml;
 
 import java.io.File;
+import java.util.Iterator;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -74,7 +75,7 @@ public class App1_yaml {
 		JsonNode jsonNodeTree = mapper.readTree(new File(App1_yaml.class.getResource("/order.yaml").getPath()));
 		System.out.println(jsonNodeTree.toString());
 
-		// get Node by key name
+		// get Node by key name		
 		JsonNode jsonNodeChild = jsonNodeTree.get("orderNo");  // key = orderNo 
 		System.out.println(jsonNodeChild.toString());
 		
@@ -87,6 +88,19 @@ public class App1_yaml {
 		
 		// convert JsonNode to type String, bool, double, int
 		System.out.println(jsonNodeChild.asText());
+		
+		// JsonNode là kiểu Iterator có thể liệt kê các con của nó
+		Iterator<JsonNode> it = jsonNodeTree.iterator();
+		
+		while(it.hasNext()) {
+			JsonNode node = it.next();
+			//
+			if(node.getNodeType() == JsonNodeType.STRING) {
+				System.out.println(node.getNodeType().name());
+			}else {
+				System.out.println(node.getNodeType().name());
+			}
+		}
 		
 		//=======================================================================
 		//Json to YAML

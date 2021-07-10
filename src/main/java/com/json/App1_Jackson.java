@@ -2,10 +2,13 @@ package com.json;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.json.model.jackson.GoogleOauth2;
 import com.json.model.jackson.User;
@@ -39,7 +42,8 @@ public class App1_Jackson {
 //		exampleAll();
 //		java2Json();
 		
-		jsonFiletoJava();
+//		jsonFiletoJava();
+		string2JsonNode();
 		
 	}
 	
@@ -93,6 +97,54 @@ public class App1_Jackson {
 		}
 		
 		
+	}
+	
+	public static void string2JsonNode() {
+		ObjectMapper mapper = new ObjectMapper();
+
+		
+		try {
+			File file = new File(App1_Jackson.class.getResource("/googleAuth2.json").getPath());
+			
+			JsonNode jsonNode = mapper.readTree(file);
+			
+			// ====================================== 
+			// chỉ tìm trên child Node dưới Node này 1 cấp
+			JsonNode nodeClientId = jsonNode.get("client_id");
+			
+			if(nodeClientId == null) {
+				System.out.println("1 node = null");  // Ko tìm thấy => vì Node dưới 1 cấp nữa
+			}else {
+				System.out.println("1 client_id = " + nodeClientId.asText());	// dòng này ko đc print
+			}
+			
+			// ========================================
+			// tìm trên
+			nodeClientId = jsonNode.findValue("client_id");
+			
+			if(nodeClientId == null) {
+				System.out.println("2 node = null");  
+			}else {
+				System.out.println("2 client_id = " + nodeClientId.asText());	// dòng này đc print
+			}
+			
+			// ==============================================
+			// duyệt child nodes dưới Node 1 cấp
+			// vì JsonNode ko chứa key, mà chỉ chứa value nên ta ko dùng cách này
+			Iterator<JsonNode>  it = jsonNode.iterator(); // ko dùng
+			
+			Iterator<Map.Entry<String, JsonNode>> it2 = jsonNode.fields(); // dùng cái này
+			
+			while(it2.hasNext()) {
+				Map.Entry<String, JsonNode> entry = it2.next();
+				
+				System.out.println("NodeType = " +  entry.getValue().getNodeType().name());
+				System.out.println("NodeName = " + entry.getKey());
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}; 
 	}
 
 	public static void java2Json() throws Exception{

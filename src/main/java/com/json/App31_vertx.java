@@ -66,7 +66,6 @@ public class App31_vertx {
 		String jsonString1 = "[\"foo\",\"bar\"]";
 		JsonArray jsonArray = new JsonArray(jsonString1);
 		System.out.println(jsonArray.toString());
-
 	}
 
 	public static void JsonToJava(){

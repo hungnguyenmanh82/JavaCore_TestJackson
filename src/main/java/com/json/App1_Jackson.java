@@ -106,6 +106,7 @@ public class App1_Jackson {
 		try {
 			File file = new File(App1_Jackson.class.getResource("/googleAuth2.json").getPath());
 			
+			// ObjectNode extends jsonNode
 			JsonNode jsonNode = mapper.readTree(file);
 			
 			// ====================================== 
